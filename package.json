@@ -4,6 +4,7 @@
   "description": "Project",
   "main": "index.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "express": "^4.16.4",
     "nem-sdk": "^1.6.7"
