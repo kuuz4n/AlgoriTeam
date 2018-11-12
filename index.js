@@ -3,8 +3,11 @@ const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
 const port = 3000;
-const nem = require('nem-sdk').default;
-//let morgan = require('morgan');
+const nemsdk = require('nem-sdk').default;
+const dotenv = require('dotenv');
+
+dotenv.load();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static(__dirname + '/views'));
