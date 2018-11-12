@@ -1,16 +1,17 @@
-const nem = require('nem-sdk').default;
 const express = require('express');
 const bodyParser = require('body-parser');
-const app = express();
 const path = require('path');
+const app = express();
 const port = 3000;
+const nem = require('nem-sdk').default;
 //let morgan = require('morgan');
-
-app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }));
 
-app.set('views', path.join(__dirname, 'server/views'));
-app.set('view engine', 'html');
+app.use(express.static(__dirname + '/views'));
+
+app.get('/', (req, res) => {
+    res.sendFile('index.html');
+  });
 
 app.listen(port, (err) => {
     if(err) { return console.error(err); }
