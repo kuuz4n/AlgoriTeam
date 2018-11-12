@@ -1,0 +1,24 @@
+{
+  "name": "algoriteam",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "nem-sdk": "^1.6.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meridius01/AlgoriTeam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meridius01/AlgoriTeam/issues"
+  },
+  "homepage": "https://github.com/meridius01/AlgoriTeam#readme"
+}
