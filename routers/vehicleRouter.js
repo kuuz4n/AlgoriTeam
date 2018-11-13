@@ -3,4 +3,8 @@ const router = express.Router(); //eslint-disable-line
 const SimpleJsonStore = require('simple-json-store');
 
 
-module.export = router;
+router.get('/vehicle', (req, res) => {
+    res.sendFile('vehicle.html');
+  });
+
+module.exports = router;

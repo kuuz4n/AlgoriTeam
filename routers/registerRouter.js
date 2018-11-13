@@ -2,4 +2,8 @@ const express = require('express');
 const router = express.Router();
 
 
-module.export = router;
+router.get('/register', (req, res) => {
+    res.sendFile('register.html');
+  });
+
+module.exports = router;
