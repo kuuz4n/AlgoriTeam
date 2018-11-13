@@ -1,13 +1,15 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const path = require('path');
+import express, { static } from 'express';
+import { urlencoded } from 'body-parser';
+import path from 'path';
 const app = express();
 const port = 3000;
-const nem = require('nem-sdk').default;
-//let morgan = require('morgan');
-app.use(bodyParser.urlencoded({ extended: false }));
+import { load } from 'dotenv';
 
-app.use(express.static(__dirname + '/views'));
+load();
+
+app.use(urlencoded({ extended: false }));
+
+app.use(static(__dirname + '/views'));
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
