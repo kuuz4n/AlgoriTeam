@@ -27,42 +27,25 @@
     </nav>
 
       <div class="col-md-5 p-lg-1 mx-auto my-5">
-        <h1 class="display-5 font-weight-normal text-center">Create a New Account</h1>
-        <p class="lead font-weight-normal text-muted">Lastname
-            <input type="text" class="form-control" id="lname" style="text-transform: uppercase">
-        </p>
-        <p class="lead font-weight-normal text-muted">Firstname
-            <input type="text" class="form-control" id="fname" style="text-transform: uppercase">
-        </p>
-        <p class="lead font-weight-normal text-muted">Username
-            <input type="text" class="form-control" id="uname">
-        </p>
-        <p class="lead font-weight-normal text-muted">Password 
-            <div class="row">
-                <div class="col-9 "> 
-                <input type="password" class="form-control" name="NPassword" placeholder="New Password" id="txtNewPassword" onChange="isPasswordMatch();" >
-              </div>
-              <div class="col-3">
-              </div>
-          </div>
-        </p>
-        <p class="lead font-weight-normal text-muted">Confirm Password
-            <div class="row">
-              <div class="col-9 "> 
-                <input type="password" class="form-control"  name="RNPassword" placeholder="Retype New Password" id="txtConfirmPassword" onChange="isPasswordMatch();">
-              </div>
-              <div class="col-3">
-                <a id="divCheckPassword"></a>
-              </div>
-          </div>
-        </p>
-        <a class="btn btn-success" href="#">Save</a>
+        <h1 class="display-5 font-weight-normal text-center">List of Available Assets</h1>
+       
       </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
 
-    
+      <div class="container">
+        <div class="table-responsive">
+                <table class="table" id="assettable"> 
+                        <thead class="thead-dark">
+                          <tr>
+                            <th> </th>
+                            <th>Asset</th>
+                            <th>Location</th>
+                            <th>Area</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                </table>  
+        </div>
+      </div>
 
     <footer class="container py-5">
       <div class="row">
@@ -120,23 +103,25 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
 
-<script>
-          function isPasswordMatch() {
-      var password = $("#txtNewPassword").val();
-      var confirmPassword = $("#txtConfirmPassword").val();
-
-  if (confirmPassword !== "") { 
-      if (password != confirmPassword) $("#divCheckPassword").html("x Password does not match".fontcolor("red").fontsize(3));
-      else $("#divCheckPassword").html("✓ Password match".fontcolor("green").fontsize(3));
-          }
-  }
-  $(document).ready(function () {
-      $("#txtConfirmPassword").keyup(isPasswordMatch);
-      $("#txtNewPassword").keyup(isPasswordMatch);
-  });
+<script>    
+$(document).ready(function(){
+    $.getJSON("assetlist.json", function(data){
+        var asset_list = '';
+        $.each(data, function(key, value){
+            asset_list += '<tr>';
+            asset_list += '<td><img src="'+value.url+'" style="width:200px;height:200px;"/></td>';
+            asset_list += '<td>'+value.asset+'</td>';
+            asset_list += '<td>'+value.location+'</td>';
+            asset_list += '<td>'+value.area+'</td>';
+            asset_list += '<td>'+value.price+'</td>';
+            asset_list += '</tr>';
+        });
+        $('#assettable').append(asset_list);
+    });
+});
 </script>
-        
