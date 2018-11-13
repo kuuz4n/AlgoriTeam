@@ -1,15 +1,16 @@
-import express, { static } from 'express';
-import { urlencoded } from 'body-parser';
-import path from 'path';
+const express = require('express');
+const bodyParser = require('body-parser');
+const path = require('path');
 const app = express();
 const port = 3000;
-import { load } from 'dotenv';
+const nemsdk = require('nem-sdk').default;
+const dotenv = require('dotenv');
 
-load();
+dotenv.load();
 
-app.use(urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
-app.use(static(__dirname + '/views'));
+app.use(express.static(__dirname + '/views'));
 
 app.get('/', (req, res) => {
     res.sendFile('index.html');
