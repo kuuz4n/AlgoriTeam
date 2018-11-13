@@ -6,6 +6,12 @@ const port = 3000;
 const nemsdk = require('nem-sdk').default;
 const dotenv = require('dotenv');
 
+const registerRouter = require('./routers/registerRouter');
+const bidRouter = require('./routers/bidRouter');
+const housenlotRouter = require('./routers/housenlotRouter');
+const vehicleRouter = require('./routers/vehicleRouter');
+const auctionRouter = require('./routers/auctionRouter');
+
 dotenv.load();
 
 app.use(bodyParser.urlencoded({ extended: false }));
