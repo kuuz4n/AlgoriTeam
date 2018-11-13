@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <style>
+         .dropdown {
+              margin-top: 20px;
+              margin-bottom: 20px;
+             }
+         #usr {
+             width: 500px;
+         }
+
+     </style>
+     
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-dark text-white bg-dark site-header sticky-top py-1">
+             <div class="container d-flex flex-column flex-md-row justify-content-between">
+               <a class="nav-link text-white" href="index.html"><b>Online Auction</b></a>
+               <a class="nav-link" href="housenlot.html">Asset Category</a>
+               <a class="nav-link" href="vehicle.html">Enterprise</a>
+               <a class="nav-link" href="#">Support</a>
+               <a class="nav-link" href="#">Pricing</a>
+              </div>
+    </nav>
+          
+       
+<div class="container">
+
+  <select name="forma" onchange="location = this.value;" class="dropdown">
+    <option value="housenlot.html">House & Lot</option>  
+    <option value="vehicle.html">Vehicles</option>
+    </option>
+  </select>
+  
+        <form id="myForm">
+
+        <div class="form-group">
+             <label for="usr">Lot are(sq.m)</label>
+             <input type="text" class="form-control" id="usr">              
+        </div>
+                 
+       <div class="form-group">
+         <label for="pwd">Floor Area</label>
+         <input type="text" class="form-control" id="usr">
+       </div>  
+
+       <div class="form-group">
+            <label for="pwd">Address</label>
+            <input type="text" class="form-control" id="usr">
+          </div> 
+        
+        <div class="form-group">
+             <label for="pwd">Year acquired</label>
+             <input type="text" class="form-control" id="usr">
+        </div>
+        
+        <div class="form-group">
+             <label for="pwd">Condition</label>
+             <input type="text" class="form-control" id="usr">
+        </div>
+        
+        <div class="form-group">
+             <label for="pwd">Price</label>
+             <input type="text" class="form-control" id="usr">
+        </div>  
+        </form>
+
+
+       <button type="button" class="btn">Save</button>
+       <input type="button" class="btn" onclick= reset() value="Clear">    
+
+</div>
+    
+    <script>
+    function reset(){
+    document.getElementById("myForm").reset();
+    }
+    </script>
+
+</body>
+</html>
