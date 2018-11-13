@@ -17,40 +17,58 @@
   <body>
 
     <nav class="navbar navbar-dark text-white bg-dark site-header sticky-top py-1">
-      <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <a class="nav-link text-white" href="/"><b>Online Auction</b></a>
-        <a class="nav-link" href="housenlot.html">Assets List</a>
-        <a class="nav-link" href="#">Log In</a>
-        <a class="nav-link" href="#">Register</a>
-        <a class="nav-link" href="#">Support</a>
+      <div class="container">
+        <a class="nav-link text-white" href="/"><b>Online Auction Dashboard</b></a>
+        <a class="nav-link btn-success" href="#">Add Asset</a>
+        <a class="nav-link text-white" href="#">Log Out</a>
       </div>
     </nav>
 
-    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-light">
-      <div class="col-md-5 p-lg-5 mx-auto my-5">
-        <h1 class="display-4 font-weight-normal">Auctions made easy</h1>
-        <p class="lead font-weight-normal">With Online Auctions, you can browse and bid assets right at your fingertips.</p>
-        <a class="btn btn-outline-secondary" href="#">Get started</a>
-      </div>
-      <div class="product-device shadow-sm d-none d-md-block"></div>
-      <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
-    </div>
-
     <div class="container">
-      <div class="row d-md-flex flex-md-equal my-md-3 pl-md-3">
-        <div class="col bg-light mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-          <div class="my-3 p-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-          </div>
-          <div class="bg-dark shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
-        </div>
-        <div class="col bg-primary mr-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center text-white overflow-hidden">
-          <div class="my-3 py-3">
-            <h2 class="display-5">Another headline</h2>
-            <p class="lead">And an even wittier subheading.</p>
-          </div>
-          <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 300px; border-radius: 21px 21px 0 0;"></div>
+      <h1>Dashboard</h1>
+      <div class="row d-md-flex flex-md-equal my-md-3 pl-md-3">      
+        <div class="col card">
+          <table class="table">
+            <tr>
+              <td>Lot area (sq.m.)</td>
+              <td>Floor area (sq.m.)</td>
+              <td>Address</td>
+              <td>Year acquired</td>
+              <td>Condition</td>
+              <td>Price (PHP)</td>
+              <td>Actions</td>
+            </tr>
+            <!--<tr>
+              <td>100</td>
+              <td>200</td>
+              <td>300 Kuratsa St., Brgy 285, Sampaloc, Manila</td>
+              <td>1988</td>
+              <td>Good, needs slight repair</td>
+              <td>7500320</td>
+              <td>
+                <button>Edit</button>
+                <button>Delete</button>                
+              </td>
+            </tr>-->
+
+          </table>
+
+          <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+          <script>
+            $(document).ready(function(){
+              $.ajax({
+                url:"assetslist.json",
+                dataType:"json",
+                sucess:function(data){
+                  $(data.houseandlot).each(function(index,value){
+                    var record="<tr><td>" + value.id + "</td><td>" + value.la + "</td><td>" + value.fa + "</td><td>" + value.address + "</td><td>" + value.yearac + "</td><td>" + value.cond + "</td><td>" + value.price + "</td><td><button>Edit</button><button>Delete</button></td></tr>";
+                    $("table").append(record);
+                  });
+                }
+              });
+            });
+          </script>
+
         </div>
       </div>
     </div>
@@ -106,9 +124,7 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
