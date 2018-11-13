@@ -9,7 +9,18 @@
     "dotenv": "^6.1.0",
     "express": "^4.16.4",
     "nem-sdk": "^1.6.7",
+<<<<<<< HEAD
     "simple-json-store": "0.0.1"
+=======
+    "simple-json-store": "0.0.1",
+    "cryptiles": ">=4.1.2",
+    "hoek": ">=4.2.1",
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+>>>>>>> f8d893f7edc0d8798ddeabd4902df5ccc235698f
   },
   "devDependencies": {},
   "scripts": {
