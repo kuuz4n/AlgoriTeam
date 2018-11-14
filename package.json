@@ -7,6 +7,10 @@
     "body-parser": "^1.18.3",
     "bootstrap": "^4.1.3",
     "dotenv": "^6.1.0",
+<<<<<<< HEAD
+    "env": "0.0.2",
+=======
+>>>>>>> c0a4d373851d34cdb7b8f1354b3e141195dc052e
     "express": "^4.16.4",
     "nem-sdk": "^1.6.7",
 <<<<<<< HEAD
@@ -17,10 +21,15 @@
     "hoek": ">=4.2.1"
   },
   "devDependencies": {
+<<<<<<< HEAD
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0"
+=======
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0"
 >>>>>>> f8d893f7edc0d8798ddeabd4902df5ccc235698f
+>>>>>>> c0a4d373851d34cdb7b8f1354b3e141195dc052e
   },
   "devDependencies": {},
   "scripts": {
