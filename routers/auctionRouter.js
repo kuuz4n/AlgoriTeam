@@ -26,4 +26,5 @@ router.get('/auction', (req, res) => {
   router.get('/vehicle', (req, res) => {
     res.sendFile('vehicle.html');
   });
+  
 module.exports = router;
