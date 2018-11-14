@@ -12,6 +12,7 @@
     "express": "^4.16.4",
     "hoek": ">=4.2.1",
     "nem-sdk": "^1.6.7",
+    "react-router-dom": "^4.3.1",
     "simple-json-store": "0.0.1"
   },
   "devDependencies": {
