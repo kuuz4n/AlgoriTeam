@@ -1,0 +1,36 @@
+{
+  "name": "algoriteam",
+  "version": "1.0.0",
+  "description": "Project",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "bootstrap": "^4.1.3",
+    "cryptiles": ">=4.1.2",
+    "dotenv": "^6.1.0",
+    "env": "0.0.2",
+    "express": "^4.16.4",
+    "hoek": ">=4.2.1",
+    "nem-sdk": "^1.6.7",
+    "react-router-dom": "^4.3.1",
+    "simple-json-store": "0.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meridius01/AlgoriTeam.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meridius01/AlgoriTeam/issues"
+  },
+  "homepage": "https://github.com/meridius01/AlgoriTeam#readme"
+}
