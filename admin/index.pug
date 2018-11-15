@@ -6,7 +6,7 @@ html(lang='en')
       meta(name='description', content='')
       meta(name='author', content='')
       link(rel='icon', href='../../../../favicon.ico')
-      title Product example for Bootstrap
+      title Admin - AlgoriTeam Online Auction
       // Bootstrap core CSS
       link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
    body
@@ -14,7 +14,7 @@ html(lang='en')
          .container
             a.nav-link.text-white(href='/')
             b Online Auction Dashboard
-            a.nav-link.btn-success(href='#') Add Asset
+            a.nav-link.btn-success(href='/add') Add Asset
             a.nav-link.text-white(href='#') Log Out
       .container
       h1 Dashboard
@@ -39,8 +39,8 @@ html(lang='en')
                   td {{ hx.cond }}
                   td {{ hx.price }}
                   td
-                     a Edit
-                     a Delete
+                     button.btn-primary Edit
+                     button.btn-outline-danger(v-on:click="delHnl(hx)") Delete
       footer.container.py-5
 
    // JavaScript

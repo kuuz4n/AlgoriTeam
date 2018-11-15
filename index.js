@@ -47,8 +47,37 @@ app.get('/api/admin', function (req, res, next) {
   });
 });
 
+app.get('/api/admin/:id', (req, res) => {
+  let x = req.params.id;
+  connection.query('SELECT * FROM houseandlot WHERE h_id='+ x +'', function (error, results, fields) {
+    if (error) throw error;
+    res.send(results);
+  });
+});
+
 app.get('/admin', function (req, res) {
   res.render('admin/index.pug');
+});
+
+app.get('/add', function (req, res) {
+  res.render('admin/add.pug');
+});
+
+app.post('/add', function (req, res, next) {
+  connection.query(`INSERT INTO houseandlot(la,fa,address,year_ac,cond,price) VALUES (`+ req.body.la +`,`+ req.body.fa +`,"`+ req.body.address +`",`+ req.body.year_ac +`,"`+ req.body.cond +`",`+ req.body.price +`)`, function (error, results, fields) {
+    if(error) throw error;
+    res.redirect('/admin');
+  });
+  console.log(`Successfully added`);
+});
+
+app.delete('/api/admin/:id', (req, res) => {
+  let x = req.params.id;
+  connection.query('DELETE FROM houseandlot WHERE h_id='+ x +'', function (error, results, fields) {
+    if (error) throw error;
+  });
+  console.log(`Successfully deleted`);
+  res.redirect('/admin');
 });
 
 app.listen(port, (err) => {
