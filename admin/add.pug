@@ -1,0 +1,62 @@
+doctype html
+html
+   head
+      style.
+         .dropdown {
+         margin-top: 20px;
+         margin-bottom: 20px;
+         }
+         #usr {
+         width: 500px;
+         }
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      // <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css', integrity='sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO', crossorigin='anonymous')
+      script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+      script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+   body
+      nav.navbar.navbar-dark.text-white.bg-dark.site-header.sticky-top.py-1
+         .container.d-flex.flex-column.flex-md-row.justify-content-between
+            a.nav-link.text-white(href='index.html')
+               b Online Auction
+            a.nav-link(href='housenlot.html') Asset Category
+            a.nav-link(href='vehicle.html') Enterprise
+            a.nav-link(href='#') Support
+            a.nav-link(href='#') Pricing
+      main#addHnl(class="container")
+         select.dropdown(name='forma', onchange='location = this.value;')
+            option(value='housenlot.html') House & Lot
+            option(value='vehicle.html') Vehicles
+         form#addHnl(action='/add', method='POST')
+            .form-group
+               label Lot area (sq.m)
+               input#la.form-control(type='text', name='la', v-model='la')
+            .form-group
+               label Floor Area
+               input#fa.form-control(type='text', name='fa', v-model='fa')
+            .form-group
+               label Address
+               input#address.form-control(type='text', name='address', v-model='address')
+            .form-group
+               label Year acquired
+               input#year_ac.form-control(type='text', name='year_ac', v-model='year_ac')
+            .form-group
+               label Condition
+               input#cond.form-control(type='text', name='cond', v-model='cond')
+            .form-group
+               label Price
+               input#price.form-control(type='text', name='price', v-model='price')
+            .form-group
+               button.btn.btn-primary(type='submit' 
+               v-on:click='saveHnl') Save
+               input.btn(type='button', onclick='reset()', value='Clear')
+      script.
+         function reset() {
+         document.getElementById("addHnl").reset();
+         }
+      // Load Axios
+      script(src="https://unpkg.com/axios/dist/axios.min.js")
+      // Load Vue.js 
+      script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+      // Load our Vue component
+      script(type="text/javascript" src="/add.js")
