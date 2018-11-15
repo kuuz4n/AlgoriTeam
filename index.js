@@ -28,10 +28,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.static('public'));
 
-require("babel-core").transform("code", {
-  plugins: ["transform-es2015-modules-amd"]
-});
-
 app.set('views', path.join(__dirname, ''));
 app.set('scripts', path.join(__dirname, ''));
 app.set('view engine', 'pug');
@@ -44,11 +40,15 @@ app.use('/housenlot', housenlotRouter);
 app.use('/vehicle', vehicleRouter);
 app.use('/bid', bidRouter);
 
-app.get('/admin', function (req, res, next) {
+app.get('/api/admin', function (req, res, next) {
   connection.query('SELECT * FROM houseandlot', function (error, results, fields) {
     if (error) throw error;
-    res.render('admin/index.pug', results);
+    res.send(results);
   });
+});
+
+app.get('/admin', function (req, res) {
+  res.render('admin/index.pug');
 });
 
 app.listen(port, (err) => {
