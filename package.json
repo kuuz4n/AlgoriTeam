@@ -15,6 +15,7 @@
     "env": "0.0.2",
     "express": "^4.16.4",
     "hoek": ">=4.2.1",
+<<<<<<< HEAD
     "jquery": "^3.3.1",
     "mysql": "^2.16.0",
     "nem-sdk": "^1.6.7",
@@ -30,6 +31,16 @@
     "babel-plugin-transform-es2015-modules-amd": "^6.24.1",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0"
+=======
+    "nem-sdk": "^1.6.7",
+    "react-router-dom": "^4.3.1",
+    "simple-json-store": "0.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "babel-cli": "^6.26.0"
+>>>>>>> ea882b0be76704854aea5eb3d58f5c697e82b8e2
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
