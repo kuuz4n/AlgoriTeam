@@ -24,6 +24,21 @@
                 });   
         },
         methods: {
+            editHnl: function(hx) {
+                var self = this;
+                /* var payload = {
+                    h_id: hx.h_id
+                };
+                axios.post('/getforedit', payload)
+                  .then(function(res) {
+                    /* self.houseandlot = res.data;
+                    self.clear(); 
+                  })
+                  .catch(function(err) {
+                });*/
+                axios.get('http://localhost:3000/getforedit/' + hx.h_id);
+                window.location.href = 'http://localhost:3000/getforedit';
+            },
             delHnl: function(hx) {
                 var self = this;
                 axios.delete('http://localhost:3000/api/admin/' + hx.h_id);

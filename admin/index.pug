@@ -39,7 +39,7 @@ html(lang='en')
                   td {{ hx.cond }}
                   td {{ hx.price }}
                   td
-                     button.btn-primary Edit
+                     button.btn-primary(v-on:click="editHnl(hx)") Edit
                      button.btn-outline-danger(v-on:click="delHnl(hx)") Delete
       footer.container.py-5
 
