@@ -1,0 +1,14 @@
+[
+	{
+		"lname":"Gonzales",
+		"fname":"Karl Theodore",
+		"uname":"karltheodore",
+		"pass":"karl123"
+	},
+	{
+		"lname":"Jobs",
+		"fname":"Bill",
+		"uname":"BJ",
+        "pass":"helloworld"	
+    }
+]
