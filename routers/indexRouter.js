@@ -4,7 +4,7 @@ const SimpleJsonStore = require('simple-json-store');
 
 
   router.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.render('views/index.pug');
   });
 
 
