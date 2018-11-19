@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>   
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-dark text-white bg-dark site-header sticky-top py-1">
+			<div class="container d-flex flex-column flex-md-row justify-content-between">
+				<a class="nav-link text-white" href="/"><b>Online Auction</b></a>
+				<a class="nav-link" href="housenlot">Assets</a>
+				<a class="nav-link" href="vehicle.html">Enterprise</a>
+				<a class="nav-link" href="#">Support</a>
+				<a class="nav-link" href="#">Pricing</a>
+			</div>
+	</nav>
+          
+	<div class="container mx-auto my-3">
+		<select name="forma" onchange="location = this.value;" class="dropdown">
+			<option value="housenlot.html">House & Lot</option>  
+			<option value="vehicle.html">Vehicles</option>
+			</option>
+		</select>
+	</div>
+
+	<div class="container">
+		table.table#assets
+			thead
+				tr
+					th Lot area (sq.m.)
+					th Floor area (sq.m.)
+					th Address
+					th Year acquired
+					th Condition
+					th Price (PHP)
+					th Actions
+			tbody
+				tr(v-for="hx in houseandlot")
+					td {{ hx.la }} 
+					td {{ hx.fa }} 
+					td {{ hx.address }} 
+					td {{ hx.year_ac }}
+					td {{ hx.cond }}
+					td {{ hx.price }}
+					td
+						button.btn-primary Place Bid
+		</form>
+	</div>
+	// Load Axios
+	script(src="https://unpkg.com/axios/dist/axios.min.js")
+	// Load Vue.js 
+	script(src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js")
+	// Load our Vue component
+	script(type="text/javascript" src="/read_guest.js")
+</body>
+</html>

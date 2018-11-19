@@ -4,27 +4,27 @@ const SimpleJsonStore = require('simple-json-store');
 
 
 router.get('/housenlot', (req, res) => {
-    res.sendFile('housenlot.html');
+    res.render('views/housenlot.pug');
   });
 
   router.get('/', (req, res) => {
-    res.sendFile('index.html');
+    res.render('views/index.pug');
   });
 
   router.get('/register', (req, res) => {
-    res.sendFile('register.html');
+    res.render('views/register.pug');
   });
 
   router.get('/auction', (req, res) => {
-    res.sendFile('auction.html');
+    res.render('views/auction.pug');
   });
 
   router.get('/bid', (req, res) => {
-    res.sendFile('bid.html');
+    res.render('views/bid.pug');
   });
 
   router.get('/vehicle', (req, res) => {
-    res.sendFile('vehicle.html');
+    res.render('views/vehicle.pug');
   });
   
 module.exports = router;

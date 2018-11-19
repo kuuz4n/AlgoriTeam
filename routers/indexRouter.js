@@ -2,30 +2,28 @@ const express = require('express');
 const router = express.Router(); //eslint-disable-line
 const SimpleJsonStore = require('simple-json-store');
 
+router.get('/', (req, res) => {
+  res.render('views/index.pug');
+});
 
-  router.get('/', (req, res) => {
-    res.render('views/index.pug');
-  });
+router.get('/auction', (req, res) => {
+  res.render('views/auction.pug')
+});
 
+router.get('/bid', (req, res) => {
+  res.render('views/bid.pug')
+});
 
-  router.get('/auction', (req, res) => {
-    res.sendFile('auction.html')
-  });
+router.get('/register', (req, res) => {
+  res.render('views/register.pug')
+});
 
-  router.get('/bid', (req, res) => {
-    res.sendFile('bid.html')
-  });
+router.get('/housenlot', (req, res) => {
+  res.render('views/housenlot.pug')
+});
 
-  router.get('/register', (req, res) => {
-    res.sendFile('register.html')
-  });
-
-  router.get('/housenlot', (req, res) => {
-    res.sendFile('housenlot.html')
-  });
-
-  router.get('/vehicle', (req, res) => {
-    res.sendFile('vehicle.html')
-  });
+router.get('/vehicle', (req, res) => {
+  res.render('views/vehicle.pug')
+});
 
 module.exports = router;
